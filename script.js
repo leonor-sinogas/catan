@@ -74,14 +74,14 @@ class CatanGame {
     }
 
     getHexX(row, col) {
-        const hexWidth = 20; //60.6;  hexSize * √3 for touching edges (35 * 1.732)
+        const hexWidth = 60.6; // hexSize * √3 for touching edges (35 * 1.732)
         const centerX = 400;
         return centerX + (col - this.getHexLayout()[row].length / 2 + 0.5) * hexWidth;
     }
 
     getHexY(row, col) {
-        const hexHeight = 60.6; // hexSize * √3 for touching edges (35 * 1.732)
-        const centerY = 300;
+        const hexHeight = 50.6; // hexSize * √3 for touching edges (35 * 1.732)
+        const centerY = 340;
         return centerY + (row - 2) * hexHeight;
     }
 
