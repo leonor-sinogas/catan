@@ -74,13 +74,13 @@ class CatanGame {
     }
 
     getHexX(row, col) {
-        const hexWidth = 60.6; // hexSize * √3 for touching edges (35 * 1.732)
+        const hexWidth = 69.28; // hexSize * √3 for touching edges (35 * 1.732)
         const centerX = 400;
         return centerX + (col - this.getHexLayout()[row].length / 2 + 0.5) * hexWidth;
     }
 
     getHexY(row, col) {
-        const hexHeight = 50.6; // hexSize * √3 for touching edges (35 * 1.732)
+        const hexHeight = 69.28; // hexSize * √3 for touching edges (35 * 1.732)
         const centerY = 340;
         return centerY + (row - 2) * hexHeight;
     }
@@ -122,7 +122,7 @@ class CatanGame {
     }
 
     drawHex(svg, hex) {
-        const hexSize = 35;
+        const hexSize = 40;
         const points = [];
         
         for (let i = 0; i < 6; i++) {
@@ -177,7 +177,7 @@ class CatanGame {
 
     drawVertices(svg) {
         this.board.forEach(hex => {
-            const hexSize = 35;
+            const hexSize = 40;
             for (let i = 0; i < 6; i++) {
                 const angle = (Math.PI / 3) * i + (Math.PI / 6); // Add 30 degrees to match hex rotation
                 const x = hex.x + hexSize * Math.cos(angle);
@@ -202,7 +202,7 @@ class CatanGame {
 
     drawEdges(svg) {
         this.board.forEach(hex => {
-            const hexSize = 35;
+            const hexSize = 40;
             for (let i = 0; i < 6; i++) {
                 const angle1 = (Math.PI / 3) * i + (Math.PI / 6); // Add 30 degrees to match hex rotation
                 const angle2 = (Math.PI / 3) * ((i + 1) % 6) + (Math.PI / 6); // Add 30 degrees to match hex rotation
@@ -247,7 +247,7 @@ class CatanGame {
     drawSettlement(svg, vertexId, playerId) {
         const [hexId, vertexIndex] = vertexId.split('-').map(Number);
         const hex = this.board.find(h => h.id === hexId);
-        const hexSize = 35;
+        const hexSize = 40;
         const angle = (Math.PI / 3) * vertexIndex + (Math.PI / 6); // Add 30 degrees to match hex rotation
         const x = hex.x + hexSize * Math.cos(angle);
         const y = hex.y + hexSize * Math.sin(angle);
@@ -265,7 +265,7 @@ class CatanGame {
     drawCity(svg, vertexId, playerId) {
         const [hexId, vertexIndex] = vertexId.split('-').map(Number);
         const hex = this.board.find(h => h.id === hexId);
-        const hexSize = 35;
+        const hexSize = 40;
         const angle = (Math.PI / 3) * vertexIndex + (Math.PI / 6); // Add 30 degrees to match hex rotation
         const x = hex.x + hexSize * Math.cos(angle);
         const y = hex.y + hexSize * Math.sin(angle);
@@ -283,7 +283,7 @@ class CatanGame {
     drawRoad(svg, edgeId, playerId) {
         const [hexId, edgeIndex] = edgeId.split('-').map(Number);
         const hex = this.board.find(h => h.id === hexId);
-        const hexSize = 35;
+        const hexSize = 40;
         const angle1 = (Math.PI / 3) * edgeIndex + (Math.PI / 6); // Add 30 degrees to match hex rotation
         const angle2 = (Math.PI / 3) * ((edgeIndex + 1) % 6) + (Math.PI / 6); // Add 30 degrees to match hex rotation
         const x1 = hex.x + hexSize * Math.cos(angle1);
