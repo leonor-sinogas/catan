@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- tab name-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container"> <!-- remove containers for title and board-->
+        <header>
+            <h1>Settlers of Catan</h1>
+            <div id="current-player">Current Player: Player 1</div>
+        </header>
+        
+        <main>
+            <div id="game-board"> <!-- center game board, bigger game board, blue background ocean, -->
+                <svg id="board-svg" width="600" height="600" viewBox="0 0 600 600">
+                </svg>
+            </div>
+            
+            <div id="game-controls">
+                <div id="dice-section">
+                    <button id="roll-dice">Roll Dice</button> <!--TODO: show dice-->
+                    <div id="dice-result">Roll: -</div>
+                </div>
+                
+                <div id="player-resources"> <!-- change player resources, include icon-->
+                    <h3>Resources</h3>
+                    <div class="resource-counts">
+                        <div>Wood: <span id="wood-count">0</span></div>
+                        <div>Brick: <span id="brick-count">0</span></div>
+                        <div>Sheep: <span id="sheep-count">0</span></div>
+                        <div>Wheat: <span id="wheat-count">0</span></div>
+                        <div>Ore: <span id="ore-count">0</span></div>
+                    </div>
+                </div>
+                
+                <div id="building-controls">
+                    <h3>Build</h3>
+                    <button id="build-settlement">Build Settlement (1W, 1B, 1Sh, 1Wh)</button>
+                    <button id="build-city">Build City (2Wh, 3O)</button>
+                    <button id="build-road">Build Road (1W, 1B)</button>
+                </div>
+                
+                <div id="player-info">
+                    <h3>Victory Points: <span id="victory-points">0</span></h3>
+                    <div id="players-list">
+                        <div class="player active" data-player="0">Player 1: 0 VP</div>
+                        <div class="player" data-player="1">Player 2: 0 VP</div>
+                        <div class="player" data-player="2">Player 3: 0 VP</div>
+                        <div class="player" data-player="3">Player 4: 0 VP</div>
+                    </div>
+                </div>
+
+                <div id="trade"> <!-- fix spacing-->
+                    <button id="player-trade-button">Player Trade</button>
+                    <button id="maritime-trade-button">Maritime Trade</button>
+                </div>
+                <div id="game-actions">
+                    <button id="end-turn">End Turn</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- development cards-->
+<!-- trade ports-->
+
+<!--assign a color to each player-->
+<!-- center robber-->
+<!-- rotate hexagons-->
